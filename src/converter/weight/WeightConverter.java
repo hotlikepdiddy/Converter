@@ -24,45 +24,39 @@ public class WeightConverter{
         String to = scan.nextLine();
 
         switch (option) {
-            case 1:
+            case 1 -> {
                 System.out.printf("Converting value: %.2f\n", value);
                 System.out.printf("Converting from: %s\n", from);
                 System.out.printf("Converting to: %s\n", to);
-                System.out.printf("Result: " + value + " " + metricUnitsFull.get(from)+
+                System.out.printf("Result: " + value + " " + metricUnitsFull.get(from) +
                         " is equivalent to %.2f " + metricUnitsFull.get(to) +
-                        ".\n", convertMetric(from,to,value));
-                break;
-            case 2:
+                        ".\n", convertMetric(from, to, value));
+            }
+            case 2 -> {
                 System.out.printf("Converting value: %.2f\n", value);
                 System.out.printf("Converting from: %s\n", from);
                 System.out.printf("Converting to: %s\n", to);
-                System.out.printf("Result: " + value + " " + metricUnitsFull.get(from)+
+                System.out.printf("Result: " + value + " " + metricUnitsFull.get(from) +
                         " is equivalent to %.2f " + imperialUnitsFull.get(to) +
-                        ".\n", metricToImperial(from,to,value));
-                break;
-
-            case 3:
+                        ".\n", metricToImperial(from, to, value));
+            }
+            case 3 -> {
                 System.out.printf("Converting value: %.2f\n", value);
                 System.out.printf("Converting from: %s\n", from);
                 System.out.printf("Converting to: %s\n", to);
-                System.out.printf("Result: " + value + " " + imperialUnitsFull.get(from)+
+                System.out.printf("Result: " + value + " " + imperialUnitsFull.get(from) +
                         " is equivalent to %.2f " + imperialUnitsFull.get(to) +
-                        ".\n", convertImperial(from,to,value));
-                break;
-
-            case 4:
+                        ".\n", convertImperial(from, to, value));
+            }
+            case 4 -> {
                 System.out.printf("Converting value: %.2f\n", value);
                 System.out.printf("Converting from: %s\n", from);
                 System.out.printf("Converting to: %s\n", to);
-                System.out.printf("Result: " + value + " " + imperialUnitsFull.get(from)+
+                System.out.printf("Result: " + value + " " + imperialUnitsFull.get(from) +
                         " is equivalent to %.2f " + metricUnitsFull.get(to) +
-                        ".\n", imperialToMetric(from,to,value));
-                break;
-
-            default:
-                System.out.println("Something went wrong");
-
-
+                        ".\n", imperialToMetric(from, to, value));
+            }
+            default -> System.out.println("Something went wrong");
         }
 
 
@@ -88,7 +82,7 @@ public class WeightConverter{
                     (float) 0.001, 1}
     };
 
-    private final  float[][] imperialConversionTable = {
+    private final float[][] imperialConversionTable = {
             {1, 16, 1_600, 32_000, 35_840},
             {(float) 0.0625, 1, 100, 2_000, 2_240},
             {(float) 0.000625, (float) 0.01, 1, 20, (float) 22.40},
@@ -120,7 +114,7 @@ public class WeightConverter{
     };
 
 
-    public HashMap<String, String > metricUnitsFull = new HashMap<>() {
+    public HashMap<String, String> metricUnitsFull = new HashMap<>() {
         {
             put("mg","milligram(s)");
             put("cg","centigram(s)");
